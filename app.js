@@ -6,10 +6,13 @@ var env = process.env.NODE_ENV || "dev";
 const Client = require("./lib/Client.js");
 const client = new Client();
 
-client.login(process.env.DISCORD_BOT_TOKEN).then(() => {
-  //do we have a startMessageAlready???
-  console.log("Discord Started!");
-});
+client
+  .login(process.env.DISCORD_BOT_TOKEN)
+  .then(() => {
+    //do we have a startMessageAlready???
+    console.log("Discord Started!");
+  })
+  .catch(err => console.log("Caught a client error: \n ", err));
 
 //Express App
 var express = require("express");
