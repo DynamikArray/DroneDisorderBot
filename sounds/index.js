@@ -1,7 +1,7 @@
 const soundsList = [
   {
     label: "420",
-    description: "Cypress Hill Hits from the Bong",
+    description: "Hits from the Bong",
     file: "wannagethigh.mp3"
   },
   {

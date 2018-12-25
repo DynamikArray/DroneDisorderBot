@@ -65,8 +65,8 @@ class SoundBoardCommand extends Command {
     const sounds = this.soundFiles;
 
     if (soundCmd && sounds) {
-      const fileName = sounds[soundCmd].file;
-      if (fileName) return player(message, fileName);
+      const sound = sounds[soundCmd];
+      if (sound) return player(message, sound.file);
     }
     return false;
   }
