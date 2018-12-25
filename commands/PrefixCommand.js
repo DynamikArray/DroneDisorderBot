@@ -1,3 +1,4 @@
+/*
 const { Command } = require("discord-akairo");
 
 class PrefixCommand extends Command {
@@ -32,3 +33,4 @@ class PrefixCommand extends Command {
 }
 
 module.exports = PrefixCommand;
+*/
