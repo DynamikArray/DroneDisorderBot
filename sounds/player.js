@@ -13,7 +13,8 @@ const player = (message, audioFile) => {
     .join()
     .then(connection => {
       const dispatcher = connection.playFile(
-        path.join(__dirname, "../data/audio/" + audioFile)
+        path.join(__dirname, "/audio/" + audioFile),
+        { volume: 0.15 }
       );
       dispatcher.on("end", () => {
         voiceChannel.leave();

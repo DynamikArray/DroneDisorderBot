@@ -1,6 +1,6 @@
 const { Command } = require("discord-akairo");
-const { player } = require("../../util/player.js");
-const userPerms = require("../../util/userPerms.js");
+const { player } = require("../sounds/player.js");
+const { userPerms } = require("./userPerms.js");
 
 class StopCommand extends Command {
   constructor() {
@@ -15,7 +15,7 @@ class StopCommand extends Command {
   }
 
   exec(message) {
-    return player(message, "stop.mp3");
+    return player(message, false);
   }
 }
 
