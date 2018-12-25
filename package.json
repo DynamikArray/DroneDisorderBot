@@ -1,7 +1,7 @@
 {
-  "name": "deadband-meme-bot",
+  "name": "drone-disorder-bot",
   "version": "0.0.1",
-  "description": "Meme bot for the Deadband Disocrd ",
+  "description": "Meme bot for the Drone Disorder Disocrd ",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
@@ -10,13 +10,13 @@
   "author": "Dynamik Array",
   "license": "ISC",
   "dependencies": {
-    "debug": "^3.1.0",
-    "discord-akairo": "^7.5.4",
-    "discord.js": "^11.3.2",
+    "debug": "^3.2.6",
+    "discord-akairo": "^7.5.5",
+    "discord.js": "^11.4.2",
     "dotenv": "^5.0.1",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "ffmpeg": "0.0.4",
     "opusscript": "0.0.6",
-    "sqlite": "^2.9.2"
+    "sqlite": "^2.9.3"
   }
 }
