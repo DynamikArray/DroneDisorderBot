@@ -2,7 +2,7 @@
 
 The utility and Meme bot for the Drone Disorder Discord. http://bit.ly/dd-discord
 
-## COMMANDS LIST
+## COMMANDS LIST - list commands
 
 #### Mute - _userName Mention_ _timeout_
 
