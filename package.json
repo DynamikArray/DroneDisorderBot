@@ -1,7 +1,7 @@
 {
   "name": "drone-disorder-bot",
   "version": "0.0.1",
-  "description": "Meme bot for the Drone Disorder Disocrd ",
+  "description": "Custom Utility & Meme bot for the Drone Disorder Discord ",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
