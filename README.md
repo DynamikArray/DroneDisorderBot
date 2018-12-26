@@ -4,13 +4,13 @@ The utility and Meme bot for the Drone Disorder Discord. http://bit.ly/dd-discor
 
 ## COMMANDS LIST
 
-### Mute -
+#### Mute - _userName Mention_ _timeout_
 
-### Parm -
+#### Parm -
 
-### Stop -
+#### Stop -
 
-### Soundboard
+#### Soundboard
 
 `~sb` _`command`_ - Soundboard command for triggering sound commands in the Voice channel the user is connected to.
 
