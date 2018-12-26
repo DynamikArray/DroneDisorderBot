@@ -6,7 +6,7 @@ The utility and Meme bot for the Drone Disorder Discord. http://bit.ly/dd-discor
 
 #### Mute - _userName Mention_ _timeout_
 
-#### Parm -
+#### Parm - shows a random parmesan meme from the parmesan confirmed channel.
 
 #### Stop -
 
