@@ -16,6 +16,7 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.4",
     "ffmpeg": "0.0.4",
+    "nodemon": "^1.18.9",
     "opusscript": "0.0.6",
     "sqlite": "^2.9.3"
   }
