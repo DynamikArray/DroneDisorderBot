@@ -33,7 +33,7 @@ class SoundBoardCommand extends Command {
   createMessagePrompt(message) {
     return this.client.util.embed({
       color: 2785755,
-      title: "Drone Disord SoundBoard Command",
+      title: "Drone Disorder SoundBoard Commands",
       description:
         "Type the **Name** of the clip to play. eg (420 or Fail)  Alternately you can just include the name in your command eg, ~sb 420.",
       fields: this.createMessageFields(message),
