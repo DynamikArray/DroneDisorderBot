@@ -1,8 +1,14 @@
+/*
+  There has to be a better way to do this...
+ */
 const userPerms = message => {
+  const roles = ["Admin", "Moderator", "Voice Moderator"];
   const objRoles = message.member.roles;
-  if (objRoles.exists(role => role.name === "Admin")) return true;
-  if (objRoles.exists(role => role.name === "Moderator")) return true;
-  if (objRoles.exists(role => role.name === "Voice Moderator")) return true;
+
+  if (objRoles.some(role => roles.includes(role.name))) {
+    return true;
+  }
+
   return false;
 };
 

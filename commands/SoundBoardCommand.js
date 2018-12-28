@@ -35,7 +35,7 @@ class SoundBoardCommand extends Command {
       color: 2785755,
       title: "Drone Disord SoundBoard Command",
       description:
-        "Select a clip from below by typing the name of the clip to play.  Alternatally you can just include the name in your command.",
+        "Type the **Name** of the clip to play. eg (420 or Fail)  Alternately you can just include the name in your command eg, ~sb 420.",
       fields: this.createMessageFields(message),
       timestamp: new Date(),
       footer: {
@@ -61,13 +61,16 @@ class SoundBoardCommand extends Command {
   }
 
   exec(message, args) {
-    const soundCmd = args.sound;
-    const sounds = this.soundFiles;
+    //Fix for prefix being included on arguments
+    const alias = this.aliases[0].toUpperCase();
+    const soundCmd = args.sound.replace(`~${alias} `, "");
 
+    const sounds = this.soundFiles;
     if (soundCmd && sounds) {
       const sound = sounds[soundCmd];
       if (sound) return player(message, sound.file);
     }
+
     return false;
   }
 }
