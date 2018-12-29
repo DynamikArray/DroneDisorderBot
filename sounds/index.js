@@ -28,6 +28,16 @@ const soundsList = [
     label: "IT",
     description: "Hello IT, have u tried...",
     file: "helloit.mp3"
+  },
+  {
+    label: "TWSS",
+    description: "That's what she said",
+    file: "TWSS.mp3"
+  },
+  {
+    label: "Greasy",
+    description: "That's greasy, Yeah its greasy!",
+    file: "greasy.mp3"
   }
 ];
 
