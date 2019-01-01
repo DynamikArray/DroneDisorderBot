@@ -12,12 +12,20 @@ const player = (message, audioFile) => {
   return voiceChannel
     .join()
     .then(connection => {
+      let speaking = false;
+
       const dispatcher = connection.playFile(
         path.join(__dirname, "/audio/" + audioFile),
-        { volume: 0.15 }
+        { volume: 0.3 }
       );
-      dispatcher.on("end", () => {
-        voiceChannel.leave();
+
+      dispatcher.on("speaking", val => {
+        if (speaking && !val) {
+          voiceChannel.leave();
+          speaking = false;
+        }
+
+        if (!speaking && val) speaking = true;
       });
     })
     .catch(err => message.reply(err.message));
