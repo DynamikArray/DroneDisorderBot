@@ -1,4 +1,5 @@
 const path = require("path");
+const fs = require("fs");
 
 const player = (message, audioFile) => {
   const voiceChannel = message.member.voiceChannel;
@@ -14,9 +15,13 @@ const player = (message, audioFile) => {
     .then(connection => {
       let speaking = false;
 
-      const dispatcher = connection.playFile(
-        path.join(__dirname, "/audio/" + audioFile),
-        { volume: 0.3 }
+      const dispatcher = connection.playStream(
+        fs.createReadStream(path.join(__dirname, "/audio/" + audioFile)),
+        {
+          passes: 2,
+          volume: 0.3,
+          bitrate: "auto"
+        }
       );
 
       dispatcher.on("speaking", val => {

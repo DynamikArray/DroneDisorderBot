@@ -9,6 +9,8 @@ class SoundBoardCommand extends Command {
     super("sb", {
       aliases: ["sb"],
       category: "admin",
+      cooldown: 10000,
+      ratelimit: 2,
       args: [
         {
           id: "sound",
