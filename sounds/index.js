@@ -43,6 +43,11 @@ const soundsList = [
     label: "Greasy",
     description: "That's greasy, Yeah its greasy!",
     file: "greasy.mp3"
+  },
+  {
+    label: "Wow",
+    description: "Owen Wilsons best WOW",
+    file: "wow.mp3"
   }
 ];
 
