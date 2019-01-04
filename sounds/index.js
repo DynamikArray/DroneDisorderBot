@@ -48,6 +48,11 @@ const soundsList = [
     label: "Wow",
     description: "Owen Wilsons best WOW",
     file: "wow.mp3"
+  },
+  {
+    label: "crsf",
+    description: "Crossfire jingle",
+    file: "crsf.mp3"
   }
 ];
 
