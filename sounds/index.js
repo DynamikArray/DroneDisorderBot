@@ -41,7 +41,7 @@ const soundsList = [
   },
   {
     label: "Greasy",
-    description: "That's greasy, Yeah its greasy!",
+    description: "That's greasy",
     file: "greasy.mp3"
   },
   {
