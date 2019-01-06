@@ -37,12 +37,17 @@ const soundsList = [
   {
     label: "TWSS",
     description: "That's what she said",
-    file: "TWSS.mp3"
+    file: "twss.mp3"
   },
   {
     label: "Greasy",
     description: "That's greasy",
     file: "greasy.mp3"
+  },
+  {
+    label: "Gravy",
+    description: "Why Gravy Leg",
+    file: "gravy.mp3"
   },
   {
     label: "Wow",
