@@ -20,6 +20,11 @@ const soundsList = [
     file: "gangster.mp3"
   },
   {
+    label: "Escalated",
+    description: "That Escalated Quickly!",
+    file: "escalated.mp3"
+  },
+  {
     label: "Disclaimer",
     description: "The views and opinons...",
     file: "disclaimer.mp3"
