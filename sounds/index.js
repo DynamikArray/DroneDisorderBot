@@ -5,6 +5,11 @@ const soundsList = [
     file: "wannagethigh.mp3"
   },
   {
+    label: "Hot",
+    description: "Hot, Too Hot!",
+    file: "toohot.mp3"
+  },
+  {
     label: "Sandstorm",
     description: "The greatest SONG Of all",
     file: "sandstorm.mp3"
