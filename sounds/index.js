@@ -60,6 +60,11 @@ const soundsList = [
     file: "gravy.mp3"
   },
   {
+    label: "Enok",
+    description: "Enoke?",
+    file: "enok.mp3"
+  },
+  {
     label: "Wow",
     description: "Owen Wilsons best WOW",
     file: "wow.mp3"
