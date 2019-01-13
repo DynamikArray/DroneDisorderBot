@@ -73,6 +73,11 @@ const soundsList = [
     label: "crsf",
     description: "Crossfire jingle",
     file: "crossfire.mp3"
+  },
+  {
+    label: "sendit",
+    description: "Just going to send it.",
+    file: "sendit.mp3"
   }
 ];
 
