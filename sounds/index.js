@@ -78,6 +78,11 @@ const soundsList = [
     label: "sendit",
     description: "Just going to send it.",
     file: "sendit.mp3"
+  },
+  {
+    label: "money",
+    description: "I like money.",
+    file: "money.mp3"
   }
 ];
 
