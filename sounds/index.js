@@ -88,6 +88,11 @@ const soundsList = [
     label: "awkward",
     description: "I'm always like this.",
     file: "awkward.mp3"
+  },
+  {
+    label: "ohface",
+    description: "Oh yeah you know",
+    file: "ohface.mp3"
   }
 ];
 
