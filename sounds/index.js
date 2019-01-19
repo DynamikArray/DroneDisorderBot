@@ -103,6 +103,11 @@ const soundsList = [
     label: "gottaeat",
     description: "To be fair",
     file: "gottaeat.mp3"
+  },
+  {
+    label: "knowwhat",
+    description: "Know what im saying",
+    file: "knowwhat.mp3"
   }
 ];
 
