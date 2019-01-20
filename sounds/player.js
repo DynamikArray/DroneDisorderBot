@@ -18,8 +18,8 @@ const player = (message, audioFile) => {
       const dispatcher = connection.playStream(
         fs.createReadStream(path.join(__dirname, "/audio/" + audioFile)),
         {
-          passes: 2,
-          volume: 0.3,
+          passes: 4,
+          volume: 0.35,
           bitrate: "auto"
         }
       );
