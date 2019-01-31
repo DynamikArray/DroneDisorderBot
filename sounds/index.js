@@ -118,6 +118,16 @@ const soundsList = [
     label: "immortal",
     description: "I am Immortal",
     file: "immortal.mp3"
+  },
+  {
+    label: "smokey",
+    description: "Only you can prevent",
+    file: "smokey.mp3"
+  },
+  {
+    label: "pothead",
+    description: "Are you a pothead",
+    file: "pothead.mp3"
   }
 ];
 
