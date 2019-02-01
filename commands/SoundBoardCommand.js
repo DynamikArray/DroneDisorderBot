@@ -59,7 +59,15 @@ class SoundBoardCommand extends Command {
   }
 
   userPermissions(message) {
-    return userPerms(message);
+    //CUSTOM SET OF PERMS JUST FOR THIS COMMAND
+    const roles = ["Admin", "Moderator", "Voice Moderator", "DDBot"];
+    const objRoles = message.member.roles;
+
+    if (objRoles.some(role => roles.includes(role.name))) {
+      return true;
+    }
+
+    return false;
   }
 
   exec(message, args) {
