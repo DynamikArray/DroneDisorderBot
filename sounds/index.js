@@ -67,7 +67,7 @@ const soundsList = [
   {
     label: "Wow",
     description: "Owen Wilsons best WOW",
-    file: "wow.mp3"
+    file: "wows.mp3"
   },
   {
     label: "crsf",
