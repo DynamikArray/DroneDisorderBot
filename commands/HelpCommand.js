@@ -4,11 +4,11 @@ const { userPerms } = require("./userPerms.js");
 const { player } = require("../sounds/player.js");
 const soundsList = require("../sounds");
 
-class SoundBoardCommand extends Command {
+class HelpCommand extends Command {
   constructor() {
-    super("sb", {
-      aliases: ["sb"],
-      category: "admin",
+    super("help", {
+      aliases: ["help"],
+      category: "user",
       cooldown: 10000,
       ratelimit: 2,
       args: [
@@ -17,8 +17,10 @@ class SoundBoardCommand extends Command {
           type: "uppercase",
           description: "Choose a sound",
           prompt: {
-            start:
-              "Enter the sound name eg.***it*** or ***help*** for more information.",
+            start: message => {
+              return this.createMessagePrompt(message);
+            },
+
             retry: "That's not a valid option! Try again."
           }
         }
@@ -29,11 +31,6 @@ class SoundBoardCommand extends Command {
       obj[item.label.toUpperCase()] = item;
       return obj;
     }, {});
-
-    this.helpMessage = soundsList.reduce((obj, item) => {
-      obj = `${obj} \n **${item.label}** - ${item.description} `;
-      return obj;
-    }, "");
   }
 
   createMessagePrompt(message) {
@@ -79,11 +76,6 @@ class SoundBoardCommand extends Command {
     const alias = this.aliases[0].toUpperCase();
     const soundCmd = args.sound.replace(`~${alias} `, "");
 
-    //IF Help do something?
-    if (soundCmd.toUpperCase() === "HELP") {
-      return message.author.send(this.helpMessage);
-    }
-
     const sounds = this.soundFiles;
     if (soundCmd && sounds) {
       const sound = sounds[soundCmd];
@@ -94,4 +86,4 @@ class SoundBoardCommand extends Command {
   }
 }
 
-module.exports = SoundBoardCommand;
+module.exports = HelpCommand;
