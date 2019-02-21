@@ -148,6 +148,11 @@ const soundsList = [
     label: "taylorham",
     description: "Taylor Ham and EGG",
     file: "taylorham.mp3"
+  },
+  {
+    label: "thankyou",
+    description: "Thank you for having me",
+    file: "thankyou.mp3"
   }
 ];
 
