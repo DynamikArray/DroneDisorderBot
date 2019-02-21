@@ -143,6 +143,11 @@ const soundsList = [
     label: "drivethru",
     description: "THEY $&*@ YOU ",
     file: "drivethru.mp3"
+  },
+  {
+    label: "taylorham",
+    description: "Taylor Ham and EGG",
+    file: "taylorham.mp3"
   }
 ];
 
