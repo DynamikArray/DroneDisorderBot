@@ -5,14 +5,16 @@ const { userPerms } = require("./userPerms.js");
 class StopCommand extends Command {
   constructor() {
     super("stop", {
-      aliases: ["stop"],
-      category: "admin"
+      aliases: ["stop"]
+      //category: "admin"
     });
   }
 
+  /*
   userPermissions(message) {
     return userPerms(message);
   }
+  */
 
   exec(message) {
     return player(message, false);

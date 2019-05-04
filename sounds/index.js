@@ -158,6 +158,16 @@ const soundsList = [
     label: "frosty",
     description: "Frosty the Dabber",
     file: "frosty.mp3"
+  },
+  {
+    label: "sohigh",
+    description: "So High Another Dimension",
+    file: "sohigh.mp3"
+  },
+  {
+    label: "ballstug",
+    description: "Give your balls a tug",
+    file: "ballstug.mp3"
   }
 ];
 
