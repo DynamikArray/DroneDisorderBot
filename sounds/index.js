@@ -168,6 +168,11 @@ const soundsList = [
     label: "ballstug",
     description: "Give your balls a tug",
     file: "balls-tug.mp3"
+  },
+  {
+    label: "george",
+    description: "George is getting upset",
+    file: "george-upset.mp3"
   }
 ];
 
