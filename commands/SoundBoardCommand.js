@@ -84,6 +84,10 @@ class SoundBoardCommand extends Command {
       return message.author.send(this.helpMessage);
     }
 
+    if (soundCmd.toUpperCase() === "STOP") {
+      return player(message, false);
+    }
+
     const sounds = this.soundFiles;
     if (soundCmd && sounds) {
       const sound = sounds[soundCmd];
