@@ -11,6 +11,7 @@
   "author": "Dynamik Array",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "debug": "^3.2.6",
     "discord-akairo": "^7.5.5",
     "discord.js": "^11.4.2",
@@ -19,6 +20,8 @@
     "ffmpeg": "0.0.4",
     "nodemon": "^1.18.9",
     "opusscript": "0.0.6",
+    "puppeteer": "^1.15.0",
+    "request-promise": "^4.2.4",
     "sqlite": "^2.9.3"
   }
 }
