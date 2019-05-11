@@ -33,7 +33,7 @@ class SoundBoardCommand extends Command {
     this.helpMessage = soundsList.reduce((obj, item) => {
       obj = `${obj} \n **${item.label}** - ${item.description} `;
       return obj;
-    }, "");
+    }, "Current List of commands: \n");
   }
 
   createMessagePrompt(message) {

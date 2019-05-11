@@ -1,3 +1,4 @@
+/*
 const { Command } = require("discord-akairo");
 const { userPerms } = require("./userPerms.js");
 
@@ -15,7 +16,7 @@ class HelpCommand extends Command {
         {
           id: "sound",
           type: "uppercase",
-          description: "Choose a sound",
+          description: "Choose a category to get a list of sound clips",
           prompt: {
             start: message => {
               return this.createMessagePrompt(message);
@@ -59,6 +60,7 @@ class HelpCommand extends Command {
     return soundsList.map(sound => this.createSoundField(sound));
   }
 
+  
   userPermissions(message) {
     //CUSTOM SET OF PERMS JUST FOR THIS COMMAND
     const roles = ["Admin", "Moderator", "Voice Moderator", "DDBot"];
@@ -87,3 +89,4 @@ class HelpCommand extends Command {
 }
 
 module.exports = HelpCommand;
+*/
