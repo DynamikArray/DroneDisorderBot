@@ -173,6 +173,11 @@ const soundsList = [
     label: "george",
     description: "George is getting upset",
     file: "george-upset.mp3"
+  },
+  {
+    label: "golfclap",
+    description: "Ment at Work Golfclap",
+    file: "golfclap.mp3"
   }
 ];
 
