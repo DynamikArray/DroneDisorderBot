@@ -178,6 +178,11 @@ const soundsList = [
     label: "golfclap",
     description: "Ment at Work Golfclap",
     file: "golfclap.mp3"
+  },
+  {
+    label: "ufo",
+    description: "you ufo MF'rs",
+    file: "ufodiaz.mp3"
   }
 ];
 
