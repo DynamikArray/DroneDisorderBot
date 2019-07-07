@@ -21,16 +21,18 @@ class UFCCommand extends Command {
     this.fetchEventListing(EVENTS_URL)
       .then(eventData => {
         this.fetchCardDetails(eventData.link).then(fightCard => {
-          message.channel.send(
-            `**${this.eventName}\n${eventData.date} - ${eventData.headline}**`
-          );
+          const messageResponse = `**${this.eventName}\n${eventData.date} - ${
+            eventData.headline
+          }** \n`;
+          message.channel.send(messageResponse);
 
-          fightCard.forEach(fight => {
-            const strMsg = `${fight.weightClass} - ${fight.red.givenName} ${
+          const events = fightCard.map(fight => {
+            return `${fight.weightClass} - ${fight.red.givenName} ${
               fight.red.familyName
-            } *VS*  ${fight.blue.givenName} ${fight.blue.familyName} `;
-            message.channel.send(strMsg);
+            } *VS*  ${fight.blue.givenName} ${fight.blue.familyName} \n`;
           });
+
+          message.channel.send(events.join(""));
         });
       })
       .catch(err => {
