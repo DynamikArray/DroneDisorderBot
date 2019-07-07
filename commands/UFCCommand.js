@@ -24,7 +24,6 @@ class UFCCommand extends Command {
           const messageResponse = `**${this.eventName}\n${eventData.date} - ${
             eventData.headline
           }** \n`;
-          message.channel.send(messageResponse);
 
           const events = fightCard.map(fight => {
             return `${fight.weightClass} - ${fight.red.givenName} ${
@@ -32,7 +31,7 @@ class UFCCommand extends Command {
             } *VS*  ${fight.blue.givenName} ${fight.blue.familyName} \n`;
           });
 
-          message.channel.send(events.join(""));
+          message.channel.send(`${messageResponse} ${events.join("")}`);
         });
       })
       .catch(err => {
