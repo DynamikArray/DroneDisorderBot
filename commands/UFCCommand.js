@@ -33,11 +33,21 @@ class UFCCommand extends Command {
     });
   }
 
+  getFightStatus(status) {
+    if (!status.type.completed) {
+      if (status.displayClock && status.period) {
+        return `LIVE: **${status.displayClock} in Rd ${status.period}** | `;
+      }
+    }
+    return "";
+  }
+
   getFightCard(fight) {
+    const status = this.getFightStatus(fight.status);
     const fightType = this.getFightType(fight.type.id);
     const fighters = this.getFighterInfo(fight.competitors);
 
-    const strFight = `${fighters} in *${fightType.trim()}* `;
+    const strFight = `${status}${fighters} in *${fightType.trim()}* `;
     return strFight;
   }
 
