@@ -36,7 +36,7 @@ class UFCCommand extends Command {
   getFightStatus(status) {
     if (!status.type.completed) {
       if (status.displayClock && status.period) {
-        return `LIVE: **${status.displayClock} in Rd ${status.period}** | `;
+        return `**LIVE:** *${status.displayClock} in Rd ${status.period}* | `;
       }
     }
     return "";
