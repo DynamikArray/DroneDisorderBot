@@ -1,9 +1,9 @@
 const { Command } = require("discord-akairo");
 const rp = require("request-promise");
-const cheerio = require("cheerio");
+const { format } = require("date-fns");
 
-const BASE_URL = "https://www.ufc.com";
-const EVENTS_URL = "/events";
+const ESPN = "http://site.api.espn.com/apis/site/v2/sports/mma/ufc/scoreboard";
+const { fightTypes } = require("./ufc/ufcCodes.js");
 
 class UFCCommand extends Command {
   constructor() {
@@ -18,98 +18,88 @@ class UFCCommand extends Command {
   }
 
   exec(message, args) {
-    this.fetchEventListing(EVENTS_URL)
-      .then(eventData => {
-        this.fetchCardDetails(eventData.link).then(fightCard => {
-          const messageResponse = `**${this.eventName}\n${eventData.date} - ${
-            eventData.headline
-          }** \n`;
+    return rp({ uri: ESPN, json: true }).then(resp => {
+      const { events } = resp;
+      if (!events.length > 0) message.channel.send(`No Events Found from api`);
 
-          const events = fightCard.map(fight => {
-            return `${fight.weightClass} - ${fight.red.givenName} ${
-              fight.red.familyName
-            } *VS*  ${fight.blue.givenName} ${fight.blue.familyName} \n`;
-          });
+      const event = events[0];
+      //get first event as that is all we care about
+      const strTitle = this.getTitleInfo(event);
+      const strSpacer = this.createSpacer("-", 55);
+      const strFights = this.getFightCards(event);
 
-          message.channel.send(`${messageResponse} ${events.join("")}`);
-        });
-      })
-      .catch(err => {
-        message.channel.send(`Ooops, I didnt get event data ${err.message}`);
-      });
+      const messageResponse = `${strTitle}\n${strSpacer}${strSpacer}\n${strFights}`;
+      return message.channel.send(`${messageResponse}`);
+    });
   }
 
-  fetchEventListing(path) {
-    return rp(BASE_URL + path)
-      .then(html => {
-        const $ = cheerio.load(html);
-        const headline = $(".c-card-event--result__headline a")
-          .first()
-          .text();
-        const date = $(".c-card-event--result__date a")
-          .first()
-          .text();
-        const link = $(".c-card-event--result__date a")
-          .first()
-          .attr("href");
-        return { headline, date, link };
-      })
-      .catch(err => {
-        console.error("Error in fetchEventListing:", err);
-      });
+  getFightCard(fight) {
+    const fightType = this.getFightType(fight.type.id);
+    const fighters = this.getFighterInfo(fight.competitors);
+
+    const strFight = `${fighters} in *${fightType.trim()}* `;
+    return strFight;
   }
 
-  fetchCardDetails(path) {
-    return rp(BASE_URL + path)
-      .then(html => {
-        const matchups = [];
-        const $ = cheerio.load(html);
-
-        this.eventName = $("title")
-          .first()
-          .text();
-
-        $(".c-listing-fight__content").each((i, ele) => {
-          const fightData = {};
-          fightData.red = {};
-          fightData.blue = {};
-
-          fightData.weightClass = $(ele)
-            .find(".c-listing-fight__class")
-            .text();
-
-          fightData.red.givenName = $(ele)
-            .find(
-              ".c-listing-fight__corner--red .c-listing-fight__corner-given-name"
-            )
-            .text();
-
-          fightData.red.familyName = $(ele)
-            .find(
-              ".c-listing-fight__corner--red .c-listing-fight__corner-family-name"
-            )
-            .text();
-
-          fightData.blue.givenName = $(ele)
-            .find(
-              ".c-listing-fight__corner--blue .c-listing-fight__corner-given-name"
-            )
-            .text();
-
-          fightData.blue.familyName = $(ele)
-            .find(
-              ".c-listing-fight__corner--blue .c-listing-fight__corner-family-name"
-            )
-            .text();
-
-          matchups.push(fightData);
-        });
-        return matchups;
-      })
-      .catch(err => {
-        console.error("Error in fetchCardDetails:", err);
-      });
+  getFightCards(event) {
+    //reverse the order we get them
+    const comps = event.competitions.reverse();
+    //map over each one
+    const fights = comps.map(fight => {
+      return this.getFightCard(fight);
+    });
+    return fights.join("\n");
   }
+
+  getFighterInfo(fighters) {
+    const info = fighters
+      .sort((a, b) => {
+        return a.order - b.order;
+      })
+      .map(fighter => {
+        return `${fighter.winner ? "🥇" : ""} **${
+          fighter.athlete.displayName
+        }** (${fighter.records[0].summary})`;
+      });
+
+    return info.join("   vs   ");
+  }
+
+  getTitleInfo(event) {
+    const title = [];
+    //Name
+    title.push(`🛑 **${event.name}** `);
+
+    //Time
+    const startTime = format(new Date(event.date), "E, MMM do @h:mm a z");
+    title.push(` ⏰ ${startTime}`);
+
+    //send it back
+    return title.join(" | ");
+  }
+
+  getFightType(typeId) {
+    const fType = fightTypes[typeId];
+    if (!fType) return `-${typeId}-`;
+    return fType.name;
+  }
+
+  createSpacer(char, xTimes) {
+    let x;
+    let str = "";
+    for (x = 0; x < xTimes; x++) {
+      str = `${str}${char}`;
+    }
+    return str;
+  }
+
+  /*
+  getCornerColor(fighter) {
+    let cornerColor = "";
+    if (fighter.order == 1) cornerColor = "🔴";
+    if (fighter.order == 2) cornerColor = "🔵";
+    return cornerColor;
+  }*/
 }
 
 module.exports = UFCCommand;
