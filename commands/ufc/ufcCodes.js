@@ -14,6 +14,9 @@ const fightTypes = {
   "6": {
     name: "Flyweight "
   },
+  "32": { 
+    name: "Heavyweight"
+  },
   "36": {
     name: "Lightweight "
   },
