@@ -30,10 +30,18 @@ class SoundBoardCommand extends Command {
       return obj;
     }, {});
 
-    this.helpMessage = soundsList.reduce((obj, item) => {
-      obj = `${obj} \n **${item.label}** - ${item.description} `;
-      return obj;
-    }, "Current List of commands: \n");
+    this.helpMessage = soundsList
+      .sort((a, b) => {
+        const labelA = a.label.toLowerCase();
+        const labelB = b.label.toLowerCase();
+        if (labelA < labelB) return -1;
+        if (labelA > labelB) return 1;
+        return 0;
+      })
+      .reduce((obj, item) => {
+        obj = `${obj} \n **${item.label}** - ${item.description} `;
+        return obj;
+      }, "Current List of commands: \n");
   }
 
   createMessagePrompt(message) {

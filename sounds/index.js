@@ -188,6 +188,11 @@ const soundsList = [
     label: "ufo",
     description: "you ufo MF'rs",
     file: "ufodiaz.mp3"
+  },
+  {
+    label: "bertlaugh",
+    description: "Berts Laugh",
+    file: "bertlaugh.mp3"
   }
 ];
 
