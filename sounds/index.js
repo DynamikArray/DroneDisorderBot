@@ -193,6 +193,11 @@ const soundsList = [
     label: "bertlaugh",
     description: "Berts Laugh",
     file: "bertlaugh.mp3"
+  },
+  {
+    label: "killer",
+    description: "You have to be a killer",
+    file: "killer.mp3"
   }
 ];
 
