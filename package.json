@@ -19,10 +19,10 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.4",
     "ffmpeg": "0.0.4",
-    "nodemon": "^1.18.9",
+    "nodemon": "^1.19.4",
     "opusscript": "0.0.6",
     "puppeteer": "^1.15.0",
     "request-promise": "^4.2.4",
-    "sqlite": "^2.9.3"
+    "sqlite": "^3.0.3"
   }
 }
