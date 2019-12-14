@@ -28,7 +28,10 @@ const fightTypes = {
   },
   "49": {
     name: "Featherweight"
-  }
+  },
+  "141":{
+    name: "Women's Bantamweight"
+  },
 };
 
 module.exports = { fightTypes };
