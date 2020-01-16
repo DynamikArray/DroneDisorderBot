@@ -205,7 +205,7 @@ const soundsList = [
     file: "southy.mp3"
   },
   {
-    laebel: "runaway",
+    label: "runaway",
     description: "ran like segal",
     file: "runaway.mp3"
   }
