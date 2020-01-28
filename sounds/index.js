@@ -208,6 +208,11 @@ const soundsList = [
     label: "runaway",
     description: "ran like segal",
     file: "runaway.mp3"
+  },
+  {
+    label: "keymaster",
+    description: "I am the keymaster",
+    file: "keymaster.mp3"
   }
 ];
 
