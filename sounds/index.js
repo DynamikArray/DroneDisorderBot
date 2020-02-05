@@ -218,6 +218,11 @@ const soundsList = [
     label: "beats",
     description: "For the love of god",
     file: "beats.mp3"
+  },
+  {
+    label: "mma",
+    description: "This MMA, these guys",
+    file: "thismma.mp3"
   }
 ];
 
