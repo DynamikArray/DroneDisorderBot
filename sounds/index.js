@@ -213,6 +213,11 @@ const soundsList = [
     label: "keymaster",
     description: "I am the keymaster",
     file: "keymaster.mp3"
+  },
+  {
+    label: "beats",
+    description: "For the love of god",
+    file: "beats.mp3"
   }
 ];
 
