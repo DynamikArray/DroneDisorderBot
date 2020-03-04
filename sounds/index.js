@@ -220,14 +220,14 @@ const soundsList = [
     file: "beats.mp3"
   },
   {
+    label: "cockfight",
+    description: "Not that kind of cock",
+    file: "chickenfight.mp3"
+  },
+  {
     label: "mma",
     description: "This MMA, these guys",
     file: "thismma.mp3"
-  },
-  {
-    label: "cockfight",
-    description: "Not that kind of cock",
-    file: "cockfight.mp3"
   }
 ];
 
