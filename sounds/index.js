@@ -223,6 +223,11 @@ const soundsList = [
     label: "mma",
     description: "This MMA, these guys",
     file: "thismma.mp3"
+  },
+  {
+    label: "cockfight",
+    description: "Not that kind of cock",
+    file: "cockfight.mp3"
   }
 ];
 
