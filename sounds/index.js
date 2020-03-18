@@ -233,6 +233,11 @@ const soundsList = [
     label: "whoami",
     description: "Im a dude",
     file: "whoami.mp3"
+  },
+  {
+    label: "corona",
+    description: "not a corona cough",
+    file: "corona.mp3"
   }
 ];
 
