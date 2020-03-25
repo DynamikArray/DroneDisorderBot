@@ -238,6 +238,16 @@ const soundsList = [
     label: "corona",
     description: "not a corona cough",
     file: "corona.mp3"
+  },
+  {
+    label: "howudoing1",
+    description: "how you doing-screw you",
+    file: "howudoing1.mp3"
+  },
+  {
+    label: "howudoing2",
+    description: "2 answers to how you doing",
+    file: "howudoing2.mp3"
   }
 ];
 
