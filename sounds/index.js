@@ -248,6 +248,11 @@ const soundsList = [
     label: "howudoing2",
     description: "2 answers to how you doing",
     file: "howudoing2.mp3"
+  },
+  {
+    label: "coffin",
+    description: "coffin meme song",
+    file: "coffin.mp3"
   }
 ];
 
